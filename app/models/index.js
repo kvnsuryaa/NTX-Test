@@ -20,7 +20,9 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 // define model example
-// db.user = require("../models/User")(sequelize, Sequelize);
+db.user = require("../models/User")(sequelize, Sequelize);
+db.survey = require("../models/Survey")(sequelize, Sequelize);
+db.attack = require("../models/Attack")(sequelize, Sequelize);
 
 // relation example
 // relation between role and user

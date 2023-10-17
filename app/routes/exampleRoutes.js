@@ -12,17 +12,17 @@ module.exports = (app) => {
 
   const router = require("express").Router();
 
-  router.get(
-    "/",
-    [exampleMiddleware.exampleMiddleware],
-    exampleController.exampleFunction
-  );
+  router.get("/refactor1", exampleController.refactoreMe1);
+
+  router.post("/refactor2", exampleController.refactoreMe2);
 
   router.get(
-    "/",
-    [exampleMiddleware.exampleMiddleware],
-    exampleController.exampleFunction
+    "/getData",
+    [exampleMiddleware.exampleMiddlewareFunction],
+    exampleController.getData
   );
+
+  router.get("/generate-token", exampleController.generateToken);
 
   app.use("/api/data", router);
 };
